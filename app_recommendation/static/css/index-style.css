@@ -1,0 +1,81 @@
+.filter-group {
+
+    display: inline-block;
+    padding-right: 30px;
+}
+
+
+.numbers-history-container {
+    background-color: white;
+    display: inline-block;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+}
+
+.numbers-history-title-container {
+    background-color: #348fe2;
+    height: 30px;
+    text-align:center;
+    font-size: 15px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+
+.numbers-history-content-container {
+    background-color: white;
+    padding:25px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.numbers-history-content-part {
+
+    display:inline-block;
+    height: 100%;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+
+.numbers-history-content-part-title {
+	text-align:center;
+	color:black;
+}
+
+.numbers-history-content-part-content {
+	text-align:center;
+	color:black;
+	font-weight: bold;
+	padding-top:2px;
+	font-size: 20px;
+}
+
+#performance-content-container {
+
+    background-color: white;
+    border-radius: 0px 0px 5px 5px;
+    font-size:0px;
+
+}
+
+
+.performance-graphics {
+	margin: 0 auto;
+	max-width: 240px;
+	min-width: 180px;
+}
+
+#performance-details-container {
+    font-size:20px;
+    display: flex;
+    width:100%;
+    text-align:center;
+    color:black;
+    margin-bottom:15px;
+
+}
+
+.performance-details-values {
+	flex-basis: 100%;
+
+}
+

@@ -1,0 +1,494 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    
+    <title>{% block title %} Gognitus {% endblock %}</title>
+    
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+  
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <!-- <script src="/static/tags_field/js/jquery.min.js"></script> -->
+    <!-- <script src="/static/tags_field/js/bootstrap-tagsinput.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="/static/tags_field/css/bootstrap-tagsinput.css"> -->
+  
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha256-rByPlHULObEjJ6XQxW/flG2r+22R5dKiAoef+aXWfik=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" integrity="sha256-j+P6EZJVrbXgwSR5Mx+eCS6FvP9Wq27MBRC/ogVriY0=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css" integrity="sha256-zuyRv+YsWwh1XR5tsrZ7VCfGqUmmPmqBjIvJgQWoSDo=" crossorigin="anonymous">
+    <link href="/static/css/style.min.css" rel="stylesheet">
+    <link href="/static/css/style-responsive.min.css" rel="stylesheet">
+    <!-- <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="http://code.highcharts.com/modules/drilldown.js"></script>
+    <script src="https://code.highcharts.com/modules/solid-gauge.js"></script> -->
+    
+    <link href="/static/css/blue.css" rel="stylesheet">
+    <!-- <link href="/static/css/documentation/style.css" rel="stylesheet"> -->
+    <link href="/static/css/index-style.css" rel="stylesheet">
+    
+  <link href="/static/css/scoring.css" rel="stylesheet">
+  
+    <!-- ================== END BASE CSS STYLE ================== -->
+  
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js" integrity="sha256-EPrkNjGEmCWyazb3A/Epj+W7Qm2pB9vnfXw+X6LImPM=" crossorigin="anonymous"></script>
+    <!-- ================== END BASE JS ================== -->
+  
+  
+  </head>
+  
+  <body class="  pace-done" style=""><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+    <div class="pace-progress-inner"></div>
+  </div>
+  <div class="pace-activity"></div></div>
+    <!-- begin #page-loader -->
+    <div id="page-loader" class="fade in hide"><span class="spinner"></span></div>
+    <!-- end #page-loader -->
+  
+    <!-- begin #page-container -->
+    <div id="page-container" class="page-container fade page-sidebar-fixed page-header-fixed in">
+      <!-- begin #header -->
+      <div id="header" class="header navbar navbar-default navbar-fixed-top">
+        <!-- begin container-fluid -->
+        <div class="container-fluid">
+          <!-- begin mobile sidebar expand / collapse button -->
+          <div class="container" style="width:100%">
+            <div class="row">
+              <div class="navbar-header">
+                <a href="/" class="navbar-brand"><span class="navbar-logo"></span>
+                    
+                  Gognitus v2.0</a>
+                    
+                <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+              <!-- <div>
+                <a href="/tr/user/logout/" class="navbar-brand pull-right">Logout (cognitus)</a>
+             </div> -->
+            </div>
+          </div>
+          <!-- end mobile sidebar expand / collapse button -->
+        </div>
+        <!-- end container-fluid -->
+      </div>
+      <!-- end #header -->
+      <!-- begin #sidebar -->
+      <div id="sidebar" class="sidebar">
+        <!-- begin sidebar scrollbar -->
+        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;"><div data-scrollbar="true" data-height="100%" data-init="true" style="overflow: hidden; width: auto; height: 100%;">
+          <!-- begin sidebar nav -->
+          <ul class="nav">
+            <li class="nav-header">
+              
+                <a href="/" class="pull-right">Gognitus "G ile"</a>
+              
+            </li>
+            <li class="nav-header">Navigation</li>
+                    
+            <li class="has-sub {{ status_recommend }}">
+              <a href="{{ url_for('main') }}">
+                <span>Recommend</span>
+              </a>
+              
+            </li>
+            
+            <li class="has-sub {{ status_train }}">
+              <a href="{{ url_for('train') }}">
+                <span>Train</span>
+              </a>
+              
+            </li>
+            
+            <!-- <li class="has-sub ">
+              <a href="#">
+                <span>Intent</span>
+              </a>         -->
+            <!-- begin sidebar minify button -->
+            <li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+            <!-- end sidebar minify button -->
+          </ul>
+          <!-- end sidebar nav -->
+        </div><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 136.666px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+        <!-- end sidebar scrollbar -->
+      </div>
+      <div class="sidebar-bg"></div>
+      <!-- end #sidebar -->
+  
+      <!-- begin #content -->
+    
+
+<div id="content" class="content">
+  {% block content %}
+  <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+  <div class="scoring-container">
+      <div class="scoring-header">
+          <div class="scoring-title">
+              <h4 style="color:white">Scoring</h4>
+          </div>
+      </div>
+      <div class="scoring-body">
+          <div class="row">
+              <div class="col-md-6" id="request-button">
+                  <div class="scoring-action-button-container">
+                      <!-- <button type="button" class="btn scoring-action-button" onclick="clearText();">Clear</button>
+                      <button type="button" id="scoring-send-button" class="btn btn-primary scoring-action-button" onclick="sendClicked(this);">Send</button> -->
+
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="scoring-text-field-container">
+                      <p id="error-message" style="display:none;color:red;">Please fill text</p>
+                      <form action="{{ url_for('main') }}" method="POST">
+                        <textarea id="graph_types" name="user_query" rows="6" cols="160" placeholder="">{{ data }}</textarea>
+                        <br>
+                        <br>
+                        <!-- <input type="submit" value="Send"> -->
+                        <button type="submit" id="scoring-send-button" class="btn btn-primary scoring-action-button">Send</button>
+                    </form>
+                      <!-- <textarea id="scoring-text-area" class="form-control" rows="6" title="overall type: UNKNOWN_TYPE
+  server type: NO_SERVER_DATA
+  heuristic type: UNKNOWN_TYPE
+  label: Please fill text
+  parseable name: scoring-text-area
+  section: search_1-default
+  field signature: 2051749519
+  form signature: 5387845573425108625
+  form renderer id: 4294967295
+  field renderer id: 244" autofill-information="overall type: UNKNOWN_TYPE
+  server type: NO_SERVER_DATA
+  heuristic type: UNKNOWN_TYPE
+  label: Please fill text
+  parseable name: scoring-text-area
+  section: search_1-default
+  field signature: 2051749519
+  form signature: 5387845573425108625
+  form renderer id: 4294967295
+  field renderer id: 244" autofill-prediction="UNKNOWN_TYPE"></textarea> -->
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  <div class="scoring-container scoring-result-container" style="display: block;">
+    <div class="scoring-header">
+        <div class="scoring-title">
+    <h4 style="color:white">10 Recommendations for - {{ data }}</h4>
+    </div>
+    </div>
+    <div class="scoring-body">
+    <div class="row">
+      <div class="col-md-12">
+          <table class="table table-bordered">
+              <thead>
+              <tr>
+                  <th>Items</th>
+                  </tr>
+              </thead>
+              <tbody id="scoring-result-content">
+                {% if not results %}
+                    <tr><td> {{ message }} </td></tr>
+                {% else %}
+                    {% for result in results %}  
+                        <tr><td>{{ result }}</td></tr>
+                    {% endfor %}
+                {% endif %}  
+                
+              </tbody>
+          </table>
+      </div>
+    </div>
+    </div>
+    </div>
+  
+  <!-- Result -->
+  
+  <div class="scoring-container scoring-result-container">
+      <div class="scoring-header">
+          <div class="scoring-title">
+              <h4 style="color:white">Result</h4>
+          </div>
+      </div>
+      <div class="scoring-body">
+          <div class="row">
+              <div class="col-md-12">
+                  <table class="table table-bordered">
+                      <thead>
+                          <tr>
+                              <th>Faq Id</th>
+                              <th>Probability</th>
+                          </tr>
+                      </thead>
+                      <tbody id="scoring-result-content">
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- End Result -->
+  
+  <script>
+      var clearText = function () {
+          $('#scoring-text-area').val('')
+      }
+  
+  
+      var sendClicked = function (val) {
+          // clear result 
+          $('.scoring-result-container').hide();
+          $('#scoring-result-content').empty();
+  
+          var text = $('#scoring-text-area').val();
+          var module_id = parseInt(document.getElementById("modulee").innerText);
+          if (text == '') {
+              //$('#error-message').show();
+              return;
+          }
+  
+          $("#scoring-send-button").attr("disabled", true);
+          make_request("/api/v1/faq/predict/", { "text": text, "module_id": module_id }, classifySuccessCallback, classifyErrorCallback);
+      }
+  
+      var classifySuccessCallback = function (resp) {
+          //maybe abort async call 
+          $("#scoring-send-button").removeAttr("disabled");
+          $('#scoring-result-content').empty();
+          var markup = '';
+          var dict = resp.faqs;
+          var items = Object.keys(dict).map(function (key) {
+              return [key, dict[key]];
+          });
+          items.sort(function (first, second) {
+              return second[1] - first[1];
+          });
+          var myArray = items;
+          var arrayLength = myArray.length;
+          for (var i = 0; i < arrayLength; i++) {
+              id = items[i][0];
+              probability = items[i][1];
+              row = '<tr><td>' + id + '</td><td>' + "% " + probability + '</td></tr>';
+              markup += row;
+          }
+          $('#scoring-result-content').append(markup)
+          $('.scoring-result-container').show();
+      }
+  
+      var classifyErrorCallback = function (resp) {
+  
+          $("#scoring-send-button").removeAttr("disabled");
+      }
+  
+  
+      var make_request = function (url, data, callback, errorCallback) {
+          return $.ajax({
+              type: "POST",
+              headers: {
+                  "Content-Type": 'application/json',
+                  "Authorization": 'Token ' + '8487943c6c752dbb24ed2b2bd9f8a8c097997cf2'
+              },
+              url: url,
+              dataType: 'json',
+              data: JSON.stringify(data),
+              jsonp:false,
+              async: true,
+              success: callback,
+              error: errorCallback
+          });
+      }
+  
+      $(function () {
+          $('#search').keyup(function () {
+              $.ajax({
+                  type: 'GET',
+                  headers: {
+                      "Content-Type": 'application/json',
+                      "Authorization": 'Token ' + '8487943c6c752dbb24ed2b2bd9f8a8c097997cf2'
+                  },
+                  url: "/api/v1/modules",
+                  dataType: 'json',
+                  data: {
+                      "name": $('#search').val(),
+                      'module_type_id': 3
+                  },
+                  success: function (response) {
+                      if (document.getElementById("search").value == "") {
+                          $('#results').empty();
+                      }
+                      else{
+                          $('#results').empty();
+                          for (i = 0; i < response.length; i++) {
+                              $('#results').append("<li class='list-group-item'>"
+                                  + "<a href=" + window.location.origin + "/dashboard/faq/scoring/"
+                                  + response[i].id + ">" + response[i].id + "-" + response[i].name
+                                  + "</a>" + "</li>");
+                          }
+                      }
+                  }
+              });
+              $('#results').empty();
+          })
+      });
+  </script>
+  </div>
+  {% endblock %}
+  
+      <!-- end #content -->
+  
+      <!-- begin scroll to top btn -->
+      <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade in" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+      <!-- end scroll to top btn -->
+    </div>
+    <!-- end page container -->
+  <!-- <script src="/static/readmore/readmore.js"></script>
+  <script>
+    $('.readmore').readmore({
+          speed: 2, 
+          collapsedHeight: 54,
+          moreLink: '<a class="read_more" href="#">Read More...</a>',
+          lessLink: '<a class="read_less" href="#">Read Less...</a>',
+      });
+  </script> -->
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.min.js" integrity="sha256-F0O1TmEa4I8N24nY0bya59eP6svWcshqX1uzwaWC4F4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha256-KM512VNnjElC30ehFwehXjx1YCHPiQkOPmqnrWtpccM=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js" integrity="sha256-qE/6vdSYzQu9lgosKxhFplETvWvqAAlmAuR+yPh/0SI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha256-1A78rJEdiWTzco6qdn3igTBv9VupN3Q1ozZNTR4WE/Y=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js" integrity="sha256-JirYRqbf+qzfqVtEE4GETyHlAbiCpC005yBTa4rj6xg=" crossorigin="anonymous"></script>
+    <!-- ================== END BASE JS ================== -->
+  
+    <!-- ================== BEGIN PAGE LEVEL JS ================== -->
+    <script src="/static/js/bookmark_apps.js"></script>
+    <!-- <script src="/static/pagination/jquery.simplePagination.js"></script>
+    <script src="/static/pagination/jquery.twbsPagination.js"></script>
+    <script src="/static/pagination/jquery.twbsPagination.min.js"></script> -->
+    <!-- <script src="/static/jquery-tag-it/js/tag-it.js" type="text/javascript" charset="utf-8"></script> -->
+    <!-- ================== END PAGE LEVEL JS ================== -->
+  
+    <script>
+      $(document).ready(function () {
+        App.init();
+        //$(".fa-book").parent('a').attr("title", "Summary");
+        //$(".fa-long-arrow-right").parent('a').attr("title", "Data");
+        //$(".fa-pencil-square-o").parent('a').attr("title", "Edit");
+        //$(".fa-trash").parent('a').attr("title", "Delete");
+  
+        $(".reset-stopword-list").attr("title", "Reset Stopwords");
+        $(".reset-punkts-list").attr("title", "Reset Punkts");
+        $(".module-edit-button").attr("title", "Edit Model");
+        $(".module-manage-button").attr("title", "Manage Model");
+        $(".module-list-button").attr("title", "List All Models");
+        $(".module-train-button").attr("title", "Train Model");
+        $(".module-show-data-button").attr("title", "Show Model Data");
+        $(".module-show-feedback-data-button").attr("title", "Show Model Feedback Data");
+        $(".module-show-prediction-data-button").attr("title", "Show Model Prediction Data");
+        $(".module-kpi-show-data").attr("title", "Show Graphics with Filter");
+        $(".module-show-summary-button").attr("title", "Show Model Summary");
+        $(".module-show-predict-button").attr("title", "Show Model Predict");
+        $(".module-add-new-button").attr("title", "Add New Model");
+  
+        $(".cancel-button").attr("title", "Cancel Changes");
+        $(".save-button").attr("title", "Save Changes");
+        $(".upload-button").attr("title", "Upload File");
+        $(".download-button").attr("title", "Download File");
+  
+        $(".module-data-search-button").attr("title", "Search Model Data");
+        $(".module-data-add-new-button").attr("title", "Add New Model Data");
+        $(".punkt-data-new-button").attr("title", "Add New Punkt Data");
+        $(".stopword-data-new-button").attr("title", "Add New Stopword Data");
+        $(".module-data-upload-file-button").attr("title", "Add New Model Data With File");
+        $(".module-data-add-query-button").attr("title", "Add Query");
+        $(".module-data-remove-query-button").attr("title", "Remove Query");
+        $(".module-data-edit-button").attr("title", "Edit Model Data");
+  
+  
+        $(".module-user-passive-button").attr("title", "Make User Passive");
+        $(".module-user-success-button").attr("title", "Make User Active");
+        $(".module-user-delete-button").attr("title", "Delete User");
+        $(".module-user-edit-button").attr("title", "Edit User");
+        $(".module-feedback-search-button").attr("title", "Search Model Feedback");
+        $(".module-feedback-add-new-button").attr("title", "Add New Model Feedback");
+        $(".module-feedback-edit-button").attr("title", "Edit Model Feedback");
+        $(".module-feedback-delete-button").attr("title", "Delete Model Feedback");
+        $(".module-feedback-passive-button").attr("title", "Make Feedback Passive");
+        $(".module-feedback-success-button").attr("title", "Make Feedback Active");
+        $(".module-prediction-give-feedback-button").attr("title", "Give Feedback for Predicted Data");
+        $(".module-prediction-search-button").attr("title", "Search Model Prediction");
+  
+        $(".generic-prediction-search-button").attr("title", "Search Prediction");
+  
+        $("#delete_selected").attr("title", "Delete Model Data");
+        $("#delete_feedback_selected").attr("title", "Delete Selected Feedbacks");
+        $("#active_selected").attr("title", "Make Active Selected Feedbacks");
+        $("#passive_selected").attr("title", "Make Passive Selected Feedbacks");
+  
+      });
+    </script>
+     <!-- <script>
+    $('#value').on('itemAdded', function(event) {
+    $('#div-tags .bootstrap-tagsinput .value').css('display','inline');
+    });
+    </script>
+  
+    <style>
+  
+      .bootstrap-tagsinput {
+      display: block;
+      font-size:1.2rem;
+      }
+    </style> -->
+  
+    <!-- <script type="text/javascript">
+      tags_values = {}
+      try {
+        init_arr = JSON.parse(document.getElementById("tags").value);
+        }
+      catch {
+       init_arr = tags_values;
+        }
+  
+  
+        for(var i = 0; i < Object.keys(init_arr).length; i++){
+        tags_values[Object.keys(init_arr)[i]] = Object.values(init_arr)[i];
+        };
+  
+        function update_tags()
+        {
+  
+        values = [];
+        var new_values = document.getElementById("value").value.split(',');
+        var new_key = document.getElementById("key").value;
+        for(var i=0; i<new_values.length; i++){
+        values[i]=new_values[i];
+  }
+        if(tags_values[new_key] == undefined){
+          tags_values[new_key] = values;
+        } else{
+        for(var i=0; i<values.length; i++){
+  
+        tags_values[new_key].push(values[i]);
+  
+  }
+  
+  }
+  
+  
+document.getElementById("tags").value = JSON.stringify(tags_values);
+  
+  }
+    </script> -->
+
+  </body></html>

@@ -1,0 +1,40 @@
+.scoring-container{
+background-color:white;
+}
+
+.scoring-header{
+background-color:#2a72b5;
+padding:1px;
+
+}
+
+.scoring-body{
+background-color:white;
+}
+
+.scoring-title{
+
+margin-left:15px;
+}
+
+.scoring-action-button{
+margin:4px;
+}
+
+.scoring-action-button-container{
+float:right;
+margin:15px;
+}
+
+.scoring-text-field-container{
+	margin:15px;
+}
+
+.module-select{
+margin: 5px 5px 5px 15px;
+}
+
+.scoring-result-container{
+margin-top: 35px;
+display: none;
+}
